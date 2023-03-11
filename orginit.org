@@ -1,6 +1,6 @@
 #+TITLE: My settings
 #+PROPERTY: header-args:emacs-lisp :tangle ./orginit.el :mkdirp yes
-
+#+OPTIONS: toc:nil
 * Magit
 #+begin_src emacs-lisp
   (use-package magit
@@ -22,8 +22,36 @@ This section is useful for two purpose
 *** Unstaged Changes
 This section displays the list of tracked files which have been changed since the last commit. You can use =<TAB>= key to see how it changed via /inline diff/.
 ** Miscellaneous
+*** Stage (add) and Commit
 - You may use =?= after =C-x g= to see the Transient commands, and you can learn all the important keybinding.
-
+- Stage all the cases =C-x g-s=
+- Add commit & commit message =C-x g-c-c=, and once you finished you may use =C-c C-c=, and your commit will be created.
+*** Clone a repo
+Easiest way to do this is run =M-x magit-clone=. You need to identify the type of input you'd like to use to identify the repo. Choose =u= for "url or name" to clone a repo from GitHub. Then the magit will ask where you would like the Repo clone to.
+*** Commit History
+To view the commit history for the current branch. You can view the log using one of the following
+- Direct command: =M-x magit-log-current=
+- Status buffer: =l l=
+You can close it by =q=.
+*** Adding a change to the most recent commit
+Q: What if we forgot some lines that we wanted to add to this commit?
+It really easy to "extend" you most recent commit with additional changes.
+- /File/: Stage the changes that you want to add to the commit. Then press =c-e= (commit -> Extend). Magit will "amend" the commit with those changes without asking.
+- /File and Message/: If you need to edit the commit message while adding the new file, then using =c-a= (Commit -> Amend). Then you can change the original commit message
+  - Press =C-c C-c= to confirm the changes
+  - Press =C-c C-k= to abort.
+- /Message/: Use =c-w= (Commit -> Reword).
+*** Pushing a local branch to a remote
+- First create a repo in Github
+- Use =M-a= to create a remote associated with this Github repo.
+- Just in case if the Github repo already have some files, such as =Readme.md=, then press =-f= to force push. 
+- =P-p= will create a remote ("origin").
+*** Adding a file to .gitignore
+Perhaps you've got a file in Repo that you never want to see in the /Untracked Files/. You can add them into =.gitignore= files. Put your cursor on the file and press =i= to raise the /Gitignore/ panel.
+- =t=: Share this at toplevel, all the folders will do the same
+- =s=: shared this at this subdirectory.
+  
+  
 
 
 

@@ -8,6 +8,7 @@
 (load "~/Dropbox/elisp/settings/ibuffer-settings.el")
 (load "~/Dropbox/elisp/settings/misc-pkgs.el")
 (load "~/Dropbox/elisp/settings/my-functions.el")
+(load "~/Dropbox/elisp/settings/org-settings.el")
 
 ;; I don't know where to put this function
 (global-set-key (kbd "C-s") 'swiper-isearch)
