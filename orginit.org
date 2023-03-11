@@ -1,0 +1,30 @@
+#+TITLE: My settings
+#+PROPERTY: header-args:emacs-lisp :tangle ./orginit.el :mkdirp yes
+
+* Magit
+#+begin_src emacs-lisp
+  (use-package magit
+    :ensure t)
+#+end_src
+** Key bindings
+- You may use =C-x g= for the /status buffer/
+- Use =q= to close the status buffer
+- Use =g= to refresh the status buffer
+** Status Sections Introduction
+*** Repository status
+This section tells you which commit is current the "HEAD" of 3 important locations:
+- =Head=: The current local branch
+- =Push=: What you push last time.
+*** Untracked Files
+This section is useful for two purpose
+- Discover any new files that you need to add your commit
+- Identify files that need to be added to your =.gitignore= file.
+*** Unstaged Changes
+This section displays the list of tracked files which have been changed since the last commit. You can use =<TAB>= key to see how it changed via /inline diff/.
+** Miscellaneous
+- You may use =?= after =C-x g= to see the Transient commands, and you can learn all the important keybinding.
+
+
+
+
+ 
